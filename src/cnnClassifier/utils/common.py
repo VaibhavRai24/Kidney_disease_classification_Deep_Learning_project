@@ -11,7 +11,7 @@ from box import ConfigBox
 from ensure import ensure_annotations
 
 @ensure_annotations
-def read_yaml(file_path:str)->ConfigBox:
+def read_yaml(file_path:Path)->ConfigBox:
     """
     Read yaml file and return as dictionary
     """
