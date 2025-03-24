@@ -16,7 +16,7 @@ class PrepareBaseModelConfigEntity:
     base_model_path: Path
     updated_base_model_path: Path
     params_image_size: list
-    params_leanring_rate: float
+    params_learning_rate: float
     params_include_top: bool
     params_weights: str
     params_classes: int
