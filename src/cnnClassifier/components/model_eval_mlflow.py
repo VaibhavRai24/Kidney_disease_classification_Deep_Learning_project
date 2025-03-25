@@ -9,7 +9,7 @@ import dagshub
 
 
 mlflow.set_tracking_uri("https://dagshub.com/VaibhavRai/Kidney_disease_classification_Deep_Learning_project.mlflow")
-dagshub.init(repo_owner='VaibhavRai', repo_name='Kidney_disease_classification_Deep_Learning_project', mlflow=True)
+dagshub.init(repo_owner='VaibhavRai24', repo_name='Kidney_disease_classification_Deep_Learning_project', mlflow=True)
 
 class ModelEvaluation:
     def __init__(self, config: EvaluationConfigEntity):
