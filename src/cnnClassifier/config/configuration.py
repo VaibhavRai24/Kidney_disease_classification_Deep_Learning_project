@@ -72,8 +72,8 @@ class ConfigurationManager:
     
     def get_evaluation_config(self) -> EvaluationConfigEntity:
         eval_config = EvaluationConfigEntity(
-            path_of_the_model= Path("C:\Users\VAIBHAVRAI\OneDrive\Desktop\kidney_project\kd_pr\artifacts\training\model.h5"),
-            training_data= Path("kd_pr/artifacts/data_ingestion/kidney-ct-scan-image"),
+            path_of_the_model=(r"C:\Users\VAIBHAVRAI\OneDrive\Desktop\kidney_project\kd_pr\artifacts\training\model.h5"),
+            training_data=(r"C:\Users\VAIBHAVRAI\OneDrive\Desktop\kidney_project\kd_pr\artifacts\data_ingestion\kidney-ct-scan-image"),
             mlflow_tracking_uri= "https://dagshub.com/VaibhavRai24/Kidney_disease_classification_Deep_Learning_project.mlflow",
             params = self.params,
             params_image_size= self.params.IMAGE_SIZE,
