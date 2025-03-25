@@ -3,7 +3,8 @@ import os
 from cnnClassifier.utils.common import read_yaml, create_directories, save_bin, save_json
 from cnnClassifier.entity.config_entity import (DataIngestionConfigEntity,
                                                 PrepareBaseModelConfigEntity,
-                                                TrainingConfigEntity,)
+                                                TrainingConfigEntity,
+                                                EvaluationConfigEntity)
 
 class ConfigurationManager:
     def __init__(self, config_file_path= CONFIG_FILE_PATH, params_filepath = PARAMS_FILE_PATH ):
@@ -67,3 +68,16 @@ class ConfigurationManager:
         )
         
         return training_config
+    
+    
+    def get_evaluation_config(self) -> EvaluationConfigEntity:
+        eval_config = EvaluationConfigEntity(
+            path_of_the_model= Path("C:\Users\VAIBHAVRAI\OneDrive\Desktop\kidney_project\kd_pr\artifacts\training\model.h5"),
+            training_data= Path("kd_pr/artifacts/data_ingestion/kidney-ct-scan-image"),
+            mlflow_tracking_uri= "https://dagshub.com/VaibhavRai24/Kidney_disease_classification_Deep_Learning_project.mlflow",
+            params = self.params,
+            params_image_size= self.params.IMAGE_SIZE,
+            params_batch_size= self.params.BATCH_SIZE
+        )
+        
+        return eval_config
