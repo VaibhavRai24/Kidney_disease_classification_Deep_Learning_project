@@ -58,7 +58,7 @@ class ModelEvaluation:
     
     def log_mlflow(self):
         mlflow.set_registry_uri(self.config.mlflow_tracking_uri)
-        tracking_uri = urlparse(mlflow.get_artifact_uri()).scheme
+        tracking_uri = urlparse(mlflow.get_tracking_uri()).scheme
         with mlflow.start_run():
             mlflow.log_params(self.config.params)
             mlflow.log_metrics({"loss": self.score[0], "accuracy": self.score[1]})
